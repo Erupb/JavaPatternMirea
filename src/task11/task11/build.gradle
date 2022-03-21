@@ -1,0 +1,34 @@
+plugins {
+    id 'org.springframework.boot' version '2.6.4'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '16'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter:2.6.3'
+    implementation 'org.projectlombok:lombok:1.18.22'
+    implementation 'javax.validation:validation-api:2.0.1.Final'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.6.3'
+    implementation 'com.itelg.spring:spring-jenkins-actuator:1.0.2-RELEASE'
+    implementation("org.springframework.boot:spring-boot-starter-web")
+
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+jar {
+    manifest{
+        attributes('Main-class':'com.example.task11.Task11Application')
+    }
+}
