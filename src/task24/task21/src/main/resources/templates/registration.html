@@ -10,15 +10,15 @@
 </head>
 <body>
 <div >
-    <form method="post" action="/login">
+    <form th:method="POST" th:action="@{/registration}" th:object="${user}">
         <h2>Please sign up to Card API</h2>
         <p>
             <label for="username" >Username</label>
-            <input type="text" id="username" name="username" placeholder="Username" required="" autofocus="">
+            <input type="text" th:field="*{username}" id="username" placeholder="Username"/>
         </p>
         <p>
             <label for="password" >Password</label>
-            <input type="password" id="password" name="password"  placeholder="Password" required="">
+            <input type="password" th:field="*{password}" id="password" placeholder="Password"/>
         </p>
         <a href="/login">Already registered? Sign in</a>
         <button type="submit">Sign up</button>
